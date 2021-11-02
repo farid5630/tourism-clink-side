@@ -1,0 +1,13 @@
+.banner {
+    background-image: url("https://i.postimg.cc/Z57XQ0M0/images.jpg");
+    height: 600px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+};
+.title{
+    
+    font-size: 75px;
+}
