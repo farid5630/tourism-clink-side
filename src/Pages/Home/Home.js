@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Banner from './Banner/Banner';
+import GetTouch from './GetTouch/GetTouch';
+import Testimonial from './Testimonial/Testimonial';
 
 const Home = () => {
     const [services, setServices] = useState([]);
@@ -14,8 +16,8 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <br />
-            <Container>
-                
+            <Container className="my-5">
+                <h1 className="my-3 m-auto">Our Visit Sport</h1>
             <div className="row">
                     {
                         services?.map((service) => ( 
@@ -39,6 +41,8 @@ const Home = () => {
                         ))
                     }
                 </div>
+                <Testimonial></Testimonial>
+                <GetTouch></GetTouch>
             </Container>
             
         </div>

@@ -11,13 +11,21 @@ const useFirebase = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     const auth = getAuth();
+    const googleProvider = new GoogleAuthProvider();
 
-    const signInUsingGoogle = () => {
+    const signInUsingGoogle = (location, history) => {
         setIsLoading(true);
-        const googleProvider = new GoogleAuthProvider();
-
         return signInWithPopup(auth, googleProvider)
-            
+        .then((result) => {
+            // const user = result.user;
+            // saveUser(user.email, user.displayName, 'PUT')
+            // setAuthError('');
+            const destination = location?.state?.from || '/';
+            history.replace(destination);
+        })
+        .catch((error) => {
+            // setAuthError(error.message);
+        })
             .finally(() => setIsLoading(false));
     }
 

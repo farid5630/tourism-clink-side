@@ -20,10 +20,16 @@ const Header = () => {
                     >
                     <Nav.Link className="active" as={Link} to="/home">Home</Nav.Link>
                 
-                    <Nav.Link as={Link} to="/addservices">Add-Place</Nav.Link>
+                    
                     
                     {user?.email ?
-                            <Button onClick={logOut} variant="dark">Logout</Button>
+                            <div className="d-flex">
+
+                                <Nav.Link as={Link} to="/myOrders">My Orders</Nav.Link>
+                                <Nav.Link as={Link} to="/manageOrders">Manage All Order</Nav.Link>
+                                <Nav.Link as={Link} to="/addservices">Add-Place</Nav.Link>
+                                <Button onClick={logOut} variant="dark">Logout</Button>
+                            </div>
                              :
                             <Nav.Link as={Link} to="/login">Login</Nav.Link>}
                     
